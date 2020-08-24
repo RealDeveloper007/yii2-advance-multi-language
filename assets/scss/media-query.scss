@@ -1,0 +1,122 @@
+$xs-phone: 575.98px;
+$xxs-phone: 400px;
+$phone: 767.98px;
+$tablet: 991.98px;
+$desktop: 1199.98px;
+$xl-desktop:1500px;
+$xxsm-phone:374px;
+
+//-------max direction------
+
+
+// Extra small device maximum width (less than and 576px)
+@mixin xs-max {
+  @media (max-width: #{$xs-phone}) {
+    @content;
+  }
+}
+// Extra small device maximum width (less than and 400px)
+@mixin xxs-max {
+  @media (max-width: #{$xxs-phone}) {
+    @content;
+  }
+}
+
+// Extra small device maximum width (less than and 374px)
+@mixin xxsm-phone {
+  @media (max-width: #{$xxsm-phone}) {
+    @content;
+  }
+}
+
+// Small device maximum width  (less than and 768px)
+@mixin sm-max {
+  @media (max-width: #{$phone}) {
+    @content;
+  }
+}
+
+// Medium device maximum width (less than and 992px)
+@mixin md-max {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+// Large desktop device maximum width (less than and 1200px)
+@mixin lg-max {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+
+//-------min direction------
+
+@mixin xl-desktop {
+  @media (min-width: #{$xl-desktop}) {
+    @content;
+  }
+}
+
+// Extra Large desktop device minimun width   (1200px up )
+
+@mixin xl-min {
+  @media (min-width: #{$xl-desktop}) {
+    @content;
+  }
+}
+
+// Large desktop device minimun width  (992px up )
+
+@mixin lg-min {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+// Medium tablet device minimun width  (768px up )
+
+@mixin md-min {
+  @media (min-width: #{$phone }) {
+    @content;
+  }
+}
+
+
+// Small tablet device minimun width (576px up )
+
+@mixin sm-min {
+  @media (min-width: #{$xs-phone}) {
+    @content;
+  }
+}
+
+
+
+//-------min-max direction------
+
+// Large desktop device width  (desktops, 992px and up)
+@mixin desktop{
+  @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1px}) {
+    @content;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin tablet{
+  @media (min-width: #{$phone}) and (max-width: #{$tablet - 1px}) {
+    @content;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin phone{
+  @media (min-width: #{$xs-phone}) and (max-width: #{$phone - 1px}) {
+    @content;
+  }
+}
+
+
+
+

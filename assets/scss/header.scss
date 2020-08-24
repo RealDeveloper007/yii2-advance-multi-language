@@ -1,0 +1,147 @@
+header{
+//background:#0b3354;
+@include theme();
+
+padding:20px 0;
+&.header-fixed {
+z-index: 99;
+	background:transparent;
+	position:fixed;
+	top:0;
+	width:100%;
+}
+@include sm-max{
+	padding:8px 0;
+}
+.navbar-nav{
+	@include sm-max{
+	margin:0px auto;
+	}
+}
+.navbar-toggler{
+	    z-index: 99;
+	    &:focus{
+	    outline:none;
+	    }
+}
+.navbar-toggler-icon{
+    width: 26px;
+    height: 2px;
+	background:var(--white);
+	display:block;
+	margin-bottom:6px;
+}
+a{
+color:var(--secondary-text-color) !important;
+}
+
+.navbar{
+@include sm-max{
+	#navbarNavDropdown{
+	display:flex;
+	        align-items: center;
+	    height: 100% !important;
+    background-color: var(--primary-color);
+    position: fixed;
+    top: 0px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 15px;
+    
+   @include transition(.4s);
+  
+    @include transform(translateX(-100%) translateY(0%));
+  &.show {
+z-index:9;
+
+  @include transform(translateX(0%) translateY(0%));
+
+    }
+}
+}
+padding:0;
+.navbar-brand{
+padding:0;
+	color:#fff;
+	    font-size: 30px;
+	     @include md-max{
+	     font-size:28px;
+	     }
+	    @include sm-max{
+	    font-size:19px;
+	    z-index:99;
+	    }
+}
+}
+.nav-item{
+margin-right:15px;
+@include sm-max{
+	margin-right:0;
+	margin-bottom:15px;
+	&:last-child{
+	margin-bottom:0px;
+	}
+}
+&:last-child{
+	margin-right:0;
+
+
+}
+
+border-radius:100px;
+&.lang-dropdown{
+	    margin-right:15px;  
+.nav-link{
+ min-width: 186px;
+	svg{
+	fill:var(--secondary-text-color);
+	}
+}
+}
+.nav-link{
+font-size: 14px;
+	   
+   min-width: 132px;
+
+    text-align: center;
+     padding: 9px 22px !important;
+	border:1.5px solid var(--white);
+	border-radius:100px;
+	@include medium;
+	    //font-size: 14px;
+	    &:hover{
+	    //border:1.7px solid var(--white);
+	    }
+	    .drp-text{
+	    margin-top:2px;
+	    display:inline-block;
+	    }
+}
+&.btn-login{
+	     text-align: center;
+
+    @include sm-max{
+    width:192px;
+    }
+}
+	&.dropdown{
+	.nav-link{
+	display:flex;
+	align-items:center
+	}
+	}
+}
+.flag-img{
+      width: 23px;
+      height:23px;
+      margin-right:9px;
+}
+}
+.lang-dropdown{
+a{
+
+	
+}
+}

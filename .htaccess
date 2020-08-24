@@ -1,0 +1,23 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c> 
+  RewriteEngine on
+  #RewriteCond %{HTTPS} off
+  #RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,NE,R=301]
+  #RewriteRule ^ http://%{HTTP_HOST}%{REQUEST_URI} [L,NE,R=301]
+  RewriteCond %{REQUEST_URI} !^public
+  RewriteRule ^(.*)$ frontend/$1 [L] 
+  
+</IfModule>
+
+# Deny accessing below extensions
+<Files ~ "(.json|.lock|.git)">
+Order allow,deny
+Deny from all
+</Files>
+
+# Deny accessing dot files
+RewriteRule (^\.|/\.) - [F]
+
+php_value memory_limit 768M
+php_value max_execution_time 18000

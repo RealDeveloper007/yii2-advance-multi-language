@@ -1,0 +1,261 @@
+
+
+/***************login**************/
+.form-group{
+  margin-bottom:1.2rem;
+}
+.login-page-content{
+    /*padding: 2rem 0;
+  background:linear-gradient(to bottom, #1e1f21e8 0%, #181b1bf0 20%, #1e1f21 70%, #181b1bf2 100%);*/
+}
+
+.login-logo{
+  @include sm-max{
+  width:150px;
+  }
+}
+.forgot-pwd {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.have-acc{
+  color:#fff
+}
+.login-page{
+  background:url('../images/page-header.png');
+  background-size:cover;
+  background-position:top;
+  min-height: 100vh;
+  background-attachment: fixed;
+  @include sm-max{
+  padding: 1rem 0;
+  }
+  .form-check{
+  margin-bottom: 1.4rem;
+      font-size: 13px;
+      letter-spacing:1px;
+      .form-check-input{
+      margin-top:0;
+      }
+  }
+}
+  .login-btns{
+    .btn-icon {
+    margin:0 10px;
+    @include theme-shadow();
+    border-radius:50%;
+}
+  
+      svg{
+      width:40px;
+      height:40px;
+      @include xs-max{
+      width:30px;
+      height:30px;
+      }
+      }
+     
+      }
+.login-card{
+    border: 0;
+    padding: 3rem 1rem 1rem 1rem;
+      @include sm-max{
+    width: 100%;
+     padding: 1rem 0 0 0;
+     }
+      .form-control{
+       transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+       -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+       -moz-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color:var(--text-color);
+    height: 50px;
+    @include theme-radius();
+    background-color:var(--light-color);
+   // @include box-shadow(0px 2px 4px 0px rgba(12, 0, 46, 0.04));
+    width: 100%;
+    border: 1px solid var(--light-color);
+     padding-left: 1rem;
+     @include xs-max{
+     height: 40px;
+     padding-left:20px;
+     @include font-size(15px);
+     }
+     &:focus{
+     @include box-shadow(0 0.25rem 0.5rem rgba(178, 178, 208, 0.28));
+     border-color:rgba(18, 24, 91, 0.7);
+     
+     }
+      &::placeholder{
+     // font-size:14px;font-family: var(--primary-font);
+      }
+      }
+      .login-title{
+         color: var(--title-color);
+          font-size: var(--subtitle-size);
+         @include medium();
+          @include sm-max{
+           @include font-size(22px);
+          }
+       }
+    
+}
+.fb-icon{
+  color:#fff;
+  
+      background:#3c579a;
+       &:hover{
+       color:#fff;
+       }
+}
+.g-btn{
+  color:#000;
+     background:#fff;
+     &:hover{color:#000}
+}
+
+.or{
+color:var(--text-color);
+  &:before{
+     position: absolute;
+    top: 50%;
+    background: #3e4042;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+   // content: "";
+    height: 1px;
+
+  }
+}
+/**************/
+
+/***payment method***/
+#card-errors {
+  height: 20px;
+  padding: 4px 0;
+  color: #ff0000;
+  @include font-size(13px);
+}
+
+.token {
+  color: #32325d;
+}
+
+
+#stripe-token-handler {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  padding: 20px 30px;
+  border-radius: 0 0 4px 4px;
+  box-sizing: border-box;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+  background-color: white;
+}
+
+#stripe-token-handler.is-hidden {
+  opacity: 0;
+  transform: translateY(-80px);
+}
+
+.form-row {
+  width: 70%;
+  height: 100px;
+  float: left;
+}
+
+#card-element {
+ /* background-color: white;
+ font-family:var(--primary-font);
+  width: 400px;
+  height: 20px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease; */
+ 
+   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+       -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+       -moz-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color:var(--text-color);
+    height: 50px;
+    @include theme-radius();
+    background-color:var(--light-color);
+   // @include box-shadow(0px 2px 4px 0px rgba(12, 0, 46, 0.04));
+    width: 100%;
+    border: 1px solid var(--light-color);
+     padding-left: 1rem;
+     @include xs-max{
+     height: 40px;
+     padding-left:20px;
+     @include font-size(15px);
+     }
+     &:focus{
+     @include box-shadow(0 0.25rem 0.5rem rgba(178, 178, 208, 0.28));
+     border-color:rgba(18, 24, 91, 0.7);
+     outline: none;
+     }
+     &.StripeElement--focus{
+   @include box-shadow(0 0.25rem 0.5rem rgba(178, 178, 208, 0.28));
+     border-color:rgba(18, 24, 91, 0.7);
+}
+   
+}
+
+.btn-Stripe {
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+  background: #15a99e;
+  white-space: nowrap;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+  float: left;
+  margin-left: 12px;
+  margin-top: 28px;
+}
+
+.btn-Stripe:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .10), 0 3px 6px rgba(0, 0, 0, .08);
+  background-color: #11987c;
+}
+
+#card-element--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+#card-element--invalid {
+  border-color: #fa755a;
+}
+
+#card-element--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+.ElementsApp input::placeholder{
+  
+    font-family: 'Nunito Sans', sans-serif;
+    opacity:0.8;
+    color:var(--text-color);
+}

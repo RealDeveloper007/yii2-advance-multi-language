@@ -1,0 +1,234 @@
+//@import url('https://www.fontify.me/wf/7116669ff62ea6ce905b50766eaca6b8');
+//@import url('https://www.fontify.me/wf/a66fb11f40bb8a77cbc3182e4b257eee');
+:root {
+
+  --primary-color:#0b3354;
+  --light-primary-color:#1b80d3;
+  --secondary-color:#39d886 !important;
+  //--secondary-color:#54cca1 !important;
+  --title-color:#161c2d;
+  --text-color:#6a7695;
+  --dark-color:#000 !important;
+  --subtitle-color:#2c2d35;
+  --p-color:#6a7695;
+  --light-color:#f1f7ff;
+  --primary-text-color:#303030;
+  --secondary-text-color:#fff;
+  --main-title-size:42px;
+  --white-color:#fff;
+  --title-size:48px;
+  --title-size-sm:23px;
+  --subtitle-size:32px;
+  --font-size:.95rem;
+  --font-size-sm:13.5px;
+  $font-size-normal:calc(11.5px + (13 - 11.5) * ((100vw - 320px) / (1920 - 320)));
+  //fonts
+  --font-secondary:'Montserrat';
+  --font-primary:Muli;
+  
+  
+}
+@function calRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calRem($size);
+}
+
+  //$primary-color:var(--primary-color);
+  $primary-color:#0b3354;
+  $primary-hover-color:var(--primary-hover-color);
+  $dark-color:#000;
+  $light-color:#f5f5fa;
+  $secondary-color:#3add88;
+  $secondary-hover-color:var(--secondary-hover-color);
+  $title-color:var(--title-color);
+  $subtitle-color:var(--subtitle-color);
+  $p-color:var(--p-color);
+  $text-color:var(--text-color);
+  $text-white:var(--white-color);
+  $border-color:#f1576a;
+  $main-title-size:42px;
+
+  //fonts
+  $primary-font:var(--font-regular);
+  $regular:400;
+  $bold:700;
+  $medium:500;
+  $light:300;
+
+
+
+  // font-sizes
+  $p-size:16px;
+  $font-size:16px;
+  $main-title-size:56px;
+  $title-size:42px !important;
+  $subtitle-size:32px;
+
+  $title-size-sm:24px !important;
+  $subtitle-size-sm:22px;
+
+
+
+/*************
+*
+*
+*
+*
+******mixins
+*
+*
+*
+*
+*
+**************/
+@mixin font-primary{
+  font-family:var(--font-primary);
+  font-weight:500;
+  //letter-spacing: -1px;
+}
+@mixin bold(){
+  font-weight:$bold;
+}
+@mixin medium(){
+  font-weight:$medium;
+}
+
+@mixin light(){
+  font-weight:$light;
+}
+@mixin regular(){
+  font-weight:$regular;
+}
+
+@mixin border($direction, $width, $style, $color) {
+  border-#{$direction}: $width $style $color;
+}
+@mixin theme-radius(){
+  border-radius: 6px !important;
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+@mixin flex(){
+display:flex;
+display:-ms-flexbox !important;
+}
+@mixin inline-flex(){
+display:inline-flex;
+display:-ms-inline-flexbox !important;
+}
+@mixin bg-grd($dir, $color1, $color2){
+background:-moz-linear-gradient($dir, $color1, $color2);
+background:-webkit-gradient($dir, $color1, $color2);
+background:-webkit-linear-gradient($dir, $color1, $color2);
+background:-o-linear-gradient($dir, $color1, $color2);
+background:-ms-linear-gradient($dir, $color1, $color2);
+background:linear-gradient($dir, $color1, $color2);
+}
+@mixin rad-grd($dir, $color1, $color2){
+background:-moz-radial-gradient($dir, $color1, $color2);
+background:-webkit-gradient($dir, $color1, $color2);
+background:-webkit-radial-gradient($dir, $color1, $color2);
+background:-o-radial-gradient($dir, $color1, $color2);
+background:-ms-radial-gradient($dir, $color1, $color2);
+background:radial-gradient($dir, $color1, $color2);
+}
+@mixin bg-grd2($dir, $color1, $color2, $color3){
+background:-moz-linear-gradient($dir, $color1, $color2, $color3);
+background:-webkit-gradient($dir, $color1, $color2, $color3);
+background:-webkit-linear-gradient($dir, $color1, $color2, $color3);
+background:-o-linear-gradient($dir, $color1, $color2, $color3);
+background:-ms-linear-gradient($dir, $color1, $color2, $color3);
+background:linear-gradient($dir, $color1, $color2, $color3);
+}
+@mixin theme(){
+  background:$primary-color;
+ @include bg-grd(left, #011135 0%, #042955 100%);
+}
+@mixin blue(){
+  background:$primary-color;
+ @include bg-grd(left, #4e1092 0%, #2b78de 100%);
+}
+@mixin cyan(){
+ background:$secondary-color;
+ @include bg-grd2(left, #39e0e8 0%, #0cbed6 16%, #2d4cb3 100%);
+ 
+}
+
+  
+@mixin box-shadow($shadow){
+  -webkit-box-shadow:$shadow;
+  -moz-box-shadow:$shadow;
+  box-shadow:$shadow;
+}
+@mixin text-shadow($textshadow){
+  -webkit-text-shadow:$textshadow;
+  -moz-text-shadow:$textshadow;
+  text-shadow:$textshadow;
+}
+@mixin placeholder {
+  ::placeholder{@content}
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+
+@mixin transition($hover) {
+  -webkit-transition: $hover;
+  -ms-transition: $hover;
+  -o-transition:$hover;
+  -moz-transition: $hover;
+  transition: $hover;
+
+}
+@mixin sticky{
+   position: sticky;
+   position: -webkit-sticky;
+   position: -moz-sticky;
+   position: -ms-sticky;
+   position: -o-sticky;
+}
+
+
+@mixin animation ($animation1 ){
+ -webkit-animation: $animation1;
+  -ms-animation:$animation1;
+  animation:$animation1;
+}
+
+@mixin animation2($animation1, $animation1 ){
+ -webkit-animation: $animation1,$animation1;
+  -ms-animation:$animation1,$animation1;
+  animation:$animation1,$animation1;
+}
+
+@mixin transform-origin($origin){
+  transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    -o-transform-origin: $origin;
+}
+
+@mixin keyframes($animationname) {
+  @-webkit-keyframes #{$animationname} {
+      @content;
+  }
+  @-moz-keyframes #{$animationname} {
+      @content;
+  }
+  @keyframes #{$animationname} {
+      @content;
+  }
+}
+
+
